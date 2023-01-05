@@ -55,4 +55,11 @@ router.get('/podcasts', (req, res, next) => {
     .catch((err) => next(err));
 });
 
+//test commit
+router.get('/podcasts', (req, res, next) => {
+  Sound.find()
+    .then((sounds) => res.json({ sounds }))
+    .catch((err) => next(err));
+});
+
 module.exports = router;
