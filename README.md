@@ -22,7 +22,7 @@
 - GET/sounds - Fetch all soundtracks, samples, podcasts - Joao
 - GET/sounds/:id - get single sound - Joao
 - GET/sounds/search?term= - search for single sound with certain name/term - Joao
-- GET/sounds/soundtracks - get only soundtracks- Joao
+- GET/sounds/songs - get only soundtracks- Joao
 - GET/sounds/samples - get only samples - Joao
 - GET/sounds/podcasts - get only podcasts - Joao
 - POST/sounds - Post/upload a new sound
@@ -39,31 +39,34 @@
 ### PAGES
 
 - HomePage => - Julia
-- SoundtracksPage => - Soumia
+- SongsPage => - Soumia
 - SamplesPage => - Soumia
 - PodcastsPage => - Soumia
 - ProfilePage => - Julia
+- SingleSoundPage =>
+- Upload/createPage =>
+- EditPage =>
 
 ### COMPONENTS
 
 - NavBar
 - DropdownMenu
 - Tags
-- SoundContent =>
-- SoundForm =>
-- SoundButton =>
-- SoundList =>
+- SoundContent => render single sound
+- SoundForm => create or update sound
+- SoundButton => delete a sound
+- SoundList => render multiple sounds
 
-- ProfileContent =>
-- ProfileForm =>
-- ProfileButton =>
+- ProfileContent => render profile
+- ProfileForm => create or update profile
+- ProfileButton => delete profile
 
 ### SERVICES
 
 - soundLoadAll -> GET/sounds
 - soundLoadSingle -> GET/sounds/:id
 - soundSearch -> GET/sounds/search?term=
-- soundtracksLoadSingle -> GET/sounds/soundtracks
+- songSingle -> GET/sounds/soundtracks
 - samplesLoadSingle -> GET/sounds/samples
 - podcastsLoadSingle -> GET/sounds/podcasts
 - soundAdd -> POST/sounds
