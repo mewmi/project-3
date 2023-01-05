@@ -39,9 +39,10 @@
 ### PAGES
 
 - HomePage => - Julia
-- SoundtracksPage => - Soumia
-- SamplesPage => - Soumia
-- PodcastsPage => - Soumia
+- SinglePage => soundtracks,samples,Podcast - Soumia
+- UploadPage => - Julia
+- EditPage => - Soumia
+- DeletePage => - Soumia
 - ProfilePage => - Julia
 
 ### COMPONENTS
