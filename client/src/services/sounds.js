@@ -18,3 +18,5 @@ export const soundDelete = (id) =>
   api.delete(`/sounds/${id}`).then((response) => response.data);
 export const soundSearch = (term) =>
   api.get(`/sounds/search?term=${term}`).then((response) => response.data);
+export const soundLoadRandom = () =>
+  api.get(`/sounds/random`).then((response) => response.data);
