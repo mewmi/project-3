@@ -11,6 +11,7 @@ const logger = require('morgan');
 const serveFavicon = require('serve-favicon');
 const mongoose = require('mongoose');
 const baseRouter = require('./routes/base');
+const soundRouter = require('./routes/sounds');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(
 app.use(express.json());
 
 app.use('/', baseRouter);
+app.use('/sounds', soundRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
