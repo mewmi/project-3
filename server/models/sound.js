@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
   artist: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    trim: true
+    ref: 'User'
   },
   title: {
     type: String,

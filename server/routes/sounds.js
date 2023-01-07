@@ -2,8 +2,12 @@
 
 const Sound = require('../models/sound');
 const express = require('express');
+const { route } = require('./base');
+const { routeGuard } = require('./../middleware/routeGuard');
 
 const router = new express.Router();
+
+// Get Routers
 
 router.get('/', (req, res, next) => {
   Sound.find()
@@ -36,29 +40,59 @@ router.get('/search', (req, res, next) => {
     });
 });
 
-//not finished yet
 router.get('/songs', (req, res, next) => {
-  Sound.find()
+  const { category } = req.body;
+
+  Sound.find(category === 'Song')
     .then((sounds) => res.json({ sounds }))
     .catch((err) => next(err));
 });
 
 router.get('/samples', (req, res, next) => {
-  Sound.find()
+  const { category } = req.body;
+
+  Sound.find(category === 'Sample')
     .then((sounds) => res.json({ sounds }))
     .catch((err) => next(err));
 });
 
 router.get('/podcasts', (req, res, next) => {
-  Sound.find()
+  const { category } = req.body;
+
+  Sound.find(category === 'Podcast')
     .then((sounds) => res.json({ sounds }))
     .catch((err) => next(err));
 });
 
-//test commit
-router.get('/podcasts', (req, res, next) => {
-  Sound.find()
-    .then((sounds) => res.json({ sounds }))
+//Post Router
+
+router.post('/', routeGuard, (req, res, next) => {
+  const { artist, title, category, genre, format, image } = req.body;
+  Sound.create({ artist, title, category, genre, format, image })
+    .then((sound) => res.json({ sound }))
+    .catch((err) => next(err));
+});
+
+//Patch Router
+
+router.patch('/:id', routeGuard, (req, res, next) => {
+  const { id } = req.params;
+  const { artist, title, category, genre, format, image } = req.body;
+  Sound.findByIdAndUpdate(
+    id,
+    { artist, title, category, genre, format, image },
+    { new: true }
+  )
+    .then((sound) => res.json({ sound }))
+    .catch((err) => next(err));
+});
+
+//Delete Router
+
+router.delete('/:id', routeGuard, (req, res, next) => {
+  const { id } = req.params;
+  Sound.findByIdAndDelete(id)
+    .then(() => res.json({ success: true }))
     .catch((err) => next(err));
 });
 
