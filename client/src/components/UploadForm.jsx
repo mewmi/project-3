@@ -1,25 +1,29 @@
 import React from "react";
 
-const UploadForm = ({ upload, onUploadChange, onUploadSubmit }) => {
-  const handleUploadFormSubmission = (event) => {
+const soundUploadForm = ({
+  soundUpload,
+  onSoundUploadChange,
+  onSoundUploadSubmit,
+}) => {
+  const handleSoundUploadFormSubmission = (event) => {
     event.preventDefault();
-    onUploadSubmit();
+    onSoundUploadSubmit();
   };
 
   return (
-    <form onSubmit={handleUploadFormSubmission} className="submit">
-      <label htmlFor="uploadSound">Upload</label>
+    <form onSubmit={handleSoundUploadFormSubmission} className="submit">
+      <label htmlFor="sound">Upload</label>
       <input
         type="text"
-        name="uploadSound"
-        id="uploadSound"
+        name="sound"
+        id="sound"
         onChange={(event) =>
-          onUploadChange({
-            ...upload,
+          onSoundUploadChange({
+            ...soundUpload,
             uploadSound: event.target.value,
           })
         }
-        value={upload.uploadSound}
+        value={soundUpload.sound}
       />
       <label htmlFor="author">Author</label>
       <input
@@ -27,16 +31,16 @@ const UploadForm = ({ upload, onUploadChange, onUploadSubmit }) => {
         name="author"
         id="author"
         onChange={(event) =>
-          onUploadChange({
-            ...upload,
+          onSoundUploadChange({
+            ...soundUpload,
             author: event.target.value,
           })
         }
-        value={upload.author}
+        value={soundUpload.author}
       />
       <button className="uploadButton">Submit sound</button>
     </form>
   );
 };
 
-export default UploadForm;
+export default soundUploadForm;
