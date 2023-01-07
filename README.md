@@ -25,14 +25,14 @@
 - GET/sounds/songs - get only soundtracks- Joao
 - GET/sounds/samples - get only samples - Joao
 - GET/sounds/podcasts - get only podcasts - Joao
-- POST/sounds - Post/upload a new sound
-- PATCH/sounds/:id - Update a sound
-- DELETE/sounds/:id - Delete a sound
+- POST/sounds - Post/upload a new sound - Joao
+- PATCH/sounds/:id - Update a sound - Joao
+- DELETE/sounds/:id - Delete a sound - Joao
 
 - GET/profile/:id - Get single profile
-- POST/profile - Create profile
-- PATCH/profile/:id - Update a profile
-- DELETE/profile/:id - Delete a profile
+- POST/profile/create - Create profile
+- PATCH/profile/:id/edit - Update a profile
+- DELETE/profile/:id/edit - Delete a profile
 
 ## CLIENT
 
