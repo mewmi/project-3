@@ -39,14 +39,11 @@
 ### PAGES
 
 - HomePage => - Julia
-- SinglePage => soundtracks,samples,Podcast - Soumia
-- UploadPage => - Julia
+- ProfilePage => - Julia
+- UploadPage/createPage => - Julia
+- SingleSoundPage => soundtracks,samples,Podcast - Soumia
 - EditPage => - Soumia
 - DeletePage => - Soumia
-- ProfilePage => - Julia
-- SingleSoundPage =>
-- Upload/createPage =>
-- EditPage =>
 
 ### COMPONENTS
 
