@@ -6,6 +6,7 @@ import EditPage from "./pages/EditPage";
 import HomePage from "./pages/HomePage";
 import SingleSoundPage from "./pages/SingleSoundPage";
 import UploadPage from "./pages/UploadPage";
+import ProfilePage from "./pages/ProfilePage";
 
 const App = () => {
   return (
