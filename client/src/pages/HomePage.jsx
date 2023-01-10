@@ -22,6 +22,8 @@ const HomePage = () => {
         click. Create your favorite sample list for quick excess. Enjoy your new
         sounds, which will echo in your ear for a while.{" "}
       </p>
+
+      <p>Register to use all features of EchoSound</p>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 
-const soundUploadForm = ({
+const SoundUploadForm = ({
   soundUpload,
   onSoundUploadChange,
   onSoundUploadSubmit,
@@ -43,4 +43,4 @@ const soundUploadForm = ({
   );
 };
 
-export default soundUploadForm;
+export default SoundUploadForm;
