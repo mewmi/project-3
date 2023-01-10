@@ -15,13 +15,6 @@ router.get('/', (req, res, next) => {
     .catch((err) => next(err));
 });
 
-router.get('/:id', (req, res, next) => {
-  const { id } = req.params;
-  Sound.findById(id)
-    .then((sound) => res.json({ sound }))
-    .catch((err) => next(err));
-});
-
 router.get('/search', (req, res, next) => {
   const { term } = req.query;
 
@@ -41,29 +34,29 @@ router.get('/search', (req, res, next) => {
 });
 
 router.get('/songs', (req, res, next) => {
-  const { category } = req.body;
-
-  Sound.find(category === 'Song')
+  Sound.find({ category: 'Song' })
     .then((sounds) => res.json({ sounds }))
     .catch((err) => next(err));
 });
 
 router.get('/samples', (req, res, next) => {
-  const { category } = req.body;
-
-  Sound.find(category === 'Sample')
+  Sound.find({ category: 'Sample' })
     .then((sounds) => res.json({ sounds }))
     .catch((err) => next(err));
 });
 
 router.get('/podcasts', (req, res, next) => {
-  const { category } = req.body;
-
-  Sound.find(category === 'Podcast')
+  Sound.find({ category: 'Podcast' })
     .then((sounds) => res.json({ sounds }))
     .catch((err) => next(err));
 });
 
+router.get('/:id', (req, res, next) => {
+  const { id } = req.params;
+  Sound.findById(id)
+    .then((sound) => res.json({ sound }))
+    .catch((err) => next(err));
+});
 //Post Router
 
 router.post('/', routeGuard, (req, res, next) => {
