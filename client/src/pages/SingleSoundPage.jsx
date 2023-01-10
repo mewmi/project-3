@@ -1,6 +1,5 @@
 import React from "react";
-import {useState, useEffect} from 'react'
-import {}
+import { useState, useEffect } from "react";
 
 const SingleSoundPage = () => {
   return <div>SingleSoundPage</div>;
