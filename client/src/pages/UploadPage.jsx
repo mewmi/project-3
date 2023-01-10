@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { soundAdd } from "../services/sounds";
-import SoundUploadForm from "../components/SoundUploadForm";
+import UploadForm from "../components/UploadForm";
 
 const UploadPage = () => {
   const initalSound = {
@@ -24,7 +24,7 @@ const UploadPage = () => {
   };
   return (
     <div>
-      <SoundUploadForm
+      <UploadForm
         sound={sound}
         onSoundChange={setSound}
         onSoundSubmit={handleSoundUpload}

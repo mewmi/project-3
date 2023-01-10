@@ -40,14 +40,11 @@
 ### PAGES
 
 - HomePage => - Julia
-- SinglePage => soundtracks,samples,Podcast - Soumia
 - UploadPage => - Julia
+- ProfilePage => - Julia
 - EditPage => - Soumia
 - DeletePage => - Soumia
-- ProfilePage => - Julia
-- SingleSoundPage =>
-- Upload/createPage =>
-- EditPage =>
+- SinglePage => soundtracks,samples,Podcast - Soumia
 
 ### COMPONENTS
 
