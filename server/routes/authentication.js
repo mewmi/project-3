@@ -9,13 +9,6 @@ const { routeGuard } = require('../middleware/routeGuard');
 
 const saltRounds = 15;
 
-router.get('/:id', routeGuard, (req, res, next) => {
-  const { id } = req.params;
-  Sound.findById(id)
-    .then((user) => res.json({ user }))
-    .catch((err) => next(err));
-});
-
 router.post('/create', (req, res, next) => {
   const { name, email, password } = req.body;
 
@@ -56,6 +49,13 @@ router.post('/login', (req, res, next) => {
         res.status(401).json({ message: 'invalid credentials.' });
       }
     })
+    .catch((err) => next(err));
+});
+
+router.get('/:id', routeGuard, (req, res, next) => {
+  const { id } = req.params;
+  Sound.findById(id)
+    .then((user) => res.json({ user }))
     .catch((err) => next(err));
 });
 

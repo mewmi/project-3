@@ -32,8 +32,8 @@
 - GET/profile/:id - Get single profile - Joao
 - POST/profile/create - Create profile - Joao
 - POST/profile/login - login to profile - Joao
-- PATCH/profile/:id/edit - Update a profile
-- DELETE/profile/:id/edit - Delete a profile
+- PATCH/profile/:id - Update a profile
+- DELETE/profile/:id - Delete a profile
 
 ## CLIENT
 
