@@ -1,13 +1,10 @@
 import React from "react";
 
-const SoundUploadForm = ({
-  soundUpload,
-  onSoundUploadChange,
-  onSoundUploadSubmit,
-}) => {
+const SoundUploadForm = ({ sound, onSoundChange, onSoundSubmit }) => {
+  console.log("the soundUpload props received", sound);
   const handleSoundUploadFormSubmission = (event) => {
     event.preventDefault();
-    onSoundUploadSubmit();
+    onSoundSubmit();
   };
 
   return (
@@ -18,12 +15,12 @@ const SoundUploadForm = ({
         name="sound"
         id="sound"
         onChange={(event) =>
-          onSoundUploadChange({
-            ...soundUpload,
+          onSoundChange({
+            ...sound,
             uploadSound: event.target.value,
           })
         }
-        value={soundUpload.sound}
+        value={sound.sound}
       />
       <label htmlFor="author">Author</label>
       <input
@@ -31,12 +28,12 @@ const SoundUploadForm = ({
         name="author"
         id="author"
         onChange={(event) =>
-          onSoundUploadChange({
-            ...soundUpload,
+          onSoundChange({
+            ...sound,
             author: event.target.value,
           })
         }
-        value={soundUpload.author}
+        value={sound.author}
       />
       <button className="uploadButton">Submit sound</button>
     </form>

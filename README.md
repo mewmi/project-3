@@ -41,10 +41,11 @@
 
 - HomePage => - Julia
 - UploadPage => - Julia
-- ProfilePage => - Julia
-- EditPage => - Soumia
-- DeletePage => - Soumia
-- SinglePage => soundtracks,samples,Podcast - Soumia
+- ProfilePage => - Julia, edit button > edit page; delete button
+- EditPage => - Soumia - profile
+- DeletePage => - Soumia (button) <irrelevant
+- SinglePage => > edit button, link to edit page; delete button
+- AllSoundPage=> soundtracks,samples,Podcast - Soumia
 
 ### COMPONENTS
 

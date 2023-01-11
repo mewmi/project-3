@@ -13,6 +13,7 @@ const UploadPage = () => {
     image: "",
   };
   const [sound, setSound] = useState(initalSound);
+  console.log("the sound", sound);
 
   const navigate = useNavigate();
 

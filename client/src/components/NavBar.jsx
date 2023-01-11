@@ -14,6 +14,9 @@ const NavBar = () => {
         <li>
           <Link to="/new-upload">Upload Sound</Link>
         </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
       </ul>
     </div>
   );
