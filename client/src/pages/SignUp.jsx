@@ -58,7 +58,7 @@ const SignUp = (props) => {
           name="password"
           placeholder="Password"
           required
-          minLength={8}
+          minLength={5}
           value={password}
           onChange={handlePasswordChange}
           pattern="(?=.*\d)(?=.*[a-zA-Z]).*"

@@ -11,7 +11,7 @@ const encodeJwt = require('../lib/encode-jwt');
 const saltRounds = 10;
 
 const validatePassword = (password) => {
-  return password && password.length > 8;
+  return password && password.length > 5;
 };
 
 router.post('/signup', (req, res, next) => {
