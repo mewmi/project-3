@@ -9,6 +9,7 @@ import UploadPage from "./pages/UploadPage";
 import ProfilePage from "./pages/ProfilePage";
 import AllSoundPage from "./pages/AllSoundPage";
 import LogIn from "./pages/LogIn";
+import SignUp from "./pages/SignUp";
 
 const App = () => {
   return (
@@ -31,6 +32,8 @@ const App = () => {
         <Route path="/profile" element={<ProfilePage />} />
         {/*Login page*/}
         <Route path="/login" element={<LogIn />} />
+        {/*SignUp page*/}
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </div>
   );

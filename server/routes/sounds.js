@@ -8,6 +8,20 @@ const SpotifyWebApi = require('spotify-web-api-node');
 
 const router = new express.Router();
 
+const spotifyApi = new SpotifyWebApi({
+  clientId: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET
+});
+
+// Retrieve an access token
+spotifyApi.clientCredentialsGrant().then((data) => {
+  spotifyApi.setAccessToken(data.body['access_token']);
+  console.log(
+    'Spotify was correctly authenticated on the server side',
+    spotifyApi.getAccessToken()
+  );
+});
+
 // Get Routers
 
 router.get('/', (req, res, next) => {
@@ -19,19 +33,28 @@ router.get('/', (req, res, next) => {
 router.get('/search', (req, res, next) => {
   const { term } = req.query;
 
-  Sound.find({
-    $or: term.split(' ').map((word) => {
-      return { message: new RegExp(word, 'ig') };
-    })
-  })
-    .sort({ createdAt: -1 })
-    .limit(20)
-    .then((sounds) => {
-      res.json({ sounds });
-    })
-    .catch((error) => {
-      next(error);
-    });
+  spotifyApi
+    .searchArtists(term)
+    .then((results) =>
+      res.json({ artists: results.body.artists.items.map((item) => item.name) })
+    )
+    .catch((error) =>
+      console.log('Something went wrong when retrieving an access token', error)
+    );
+
+  // Sound.find({
+  //   $or: term.split(' ').map((word) => {
+  //     return { message: new RegExp(word, 'ig') };
+  //   })
+  // })
+  //   .sort({ createdAt: -1 })
+  //   .limit(20)
+  //   .then((sounds) => {
+  //     res.json({ sounds });
+  //   })
+  //   .catch((error) => {
+  //     next(error);
+  //   });
 });
 
 router.get('/songs', (req, res, next) => {
