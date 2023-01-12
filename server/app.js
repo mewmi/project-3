@@ -1,7 +1,7 @@
 'use strict';
 
 //const hbs = require('hbs');
-//const SpotifyWebApi = require('spotify-web-api-node');
+const SpotifyWebApi = require('spotify-web-api-node');
 
 const dotenv = require('dotenv');
 dotenv.config();
