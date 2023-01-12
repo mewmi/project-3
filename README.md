@@ -29,11 +29,11 @@
 - PATCH/sounds/:id - Update a sound - Joao
 - DELETE/sounds/:id - Delete a sound - Joao
 
-- GET/profile/:id - Get single profile - Joao
-- POST/profile/create - Create profile - Joao
-- POST/profile/login - login to profile - Joao
-- PATCH/profile/:id - Update a profile
-- DELETE/profile/:id - Delete a profile
+- GET/authentication/:id - Get single profile - Joao
+- POST/authentication/create - Create profile - Joao
+- POST/authentication/login - login to profile - Joao
+- PATCH/authentication/:id - Update a profile
+- DELETE/authentication/:id - Delete a profile
 
 ## CLIENT
 
