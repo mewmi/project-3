@@ -22,22 +22,22 @@ spotifyApi.clientCredentialsGrant().then((data) => {
   );
 });
 
-// Retrieve new releases
-spotifyApi.getNewReleases({ limit: 5, offset: 0, country: 'SE' }).then(
-  function (data) {
-    console.log(data.body);
-    done();
-  },
-  function (err) {
-    console.log('Something went wrong!', err);
-  }
-);
-
 // Get Routers
 
 router.get('/', (req, res, next) => {
-  Sound.find()
-    .then((sounds) => res.json({ sounds }))
+  //Sound.find()
+  //.then((sounds) => res.json({ sounds }))
+  spotifyApi
+    .getNewReleases({ limit: 15, offset: 0, country: 'SE' })
+    .then(
+      function (data) {
+        console.log(data.body);
+        done();
+      },
+      function (err) {
+        console.log('Something went wrong!', err);
+      }
+    )
     .catch((err) => next(err));
 });
 
