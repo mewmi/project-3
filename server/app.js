@@ -1,5 +1,8 @@
 'use strict';
 
+//const hbs = require('hbs');
+const SpotifyWebApi = require('spotify-web-api-node');
+
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -15,6 +18,19 @@ const soundRouter = require('./routes/sounds');
 const profileRouter = require('./routes/authentication');
 
 const app = express();
+
+const spotifyApi = new SpotifyWebApi({
+  clientId: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET
+});
+
+// Retrieve an access token
+spotifyApi
+  .clientCredentialsGrant()
+  .then((data) => spotifyApi.setAccessToken(data.body['access_token']))
+  .catch((error) =>
+    console.log('Something went wrong when retrieving an access token', error)
+  );
 
 app.use(serveFavicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));

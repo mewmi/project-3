@@ -4,6 +4,7 @@ const Sound = require('../models/sound');
 const express = require('express');
 const { route } = require('./base');
 const { routeGuard } = require('./../middleware/routeGuard');
+const SpotifyWebApi = require('spotify-web-api-node');
 
 const router = new express.Router();
 
