@@ -1,7 +1,7 @@
 'use strict';
 
 //const hbs = require('hbs');
-const SpotifyWebApi = require('spotify-web-api-node');
+//const SpotifyWebApi = require('spotify-web-api-node');
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -19,7 +19,7 @@ const profileRouter = require('./routes/authentication');
 
 const app = express();
 
-const spotifyApi = new SpotifyWebApi({
+/*const spotifyApi = new SpotifyWebApi({
   clientId: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET
 });
@@ -30,7 +30,7 @@ spotifyApi
   .then((data) => spotifyApi.setAccessToken(data.body['access_token']))
   .catch((error) =>
     console.log('Something went wrong when retrieving an access token', error)
-  );
+  );*/
 
 app.use(serveFavicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
@@ -46,7 +46,7 @@ app.use(express.json());
 
 app.use('/', baseRouter);
 app.use('/sounds', soundRouter);
-app.use('/profile', profileRouter);
+app.use('/authentication', profileRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
