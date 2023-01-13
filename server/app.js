@@ -1,8 +1,5 @@
 'use strict';
 
-//const hbs = require('hbs');
-const SpotifyWebApi = require('spotify-web-api-node');
-
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -16,6 +13,7 @@ const mongoose = require('mongoose');
 const baseRouter = require('./routes/base');
 const soundRouter = require('./routes/sounds');
 const profileRouter = require('./routes/authentication');
+const SpotifyWebApi = require('spotify-web-api-node');
 
 const multer = require('multer');
 const cloudinary = require('cloudinary').v2;

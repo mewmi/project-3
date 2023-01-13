@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { AuthContext } from "../context/authentication";
+import { useAuthContext } from "../context/authentication";
 import { signup } from "../services/authentication";
 
 const SignUp = (props) => {
@@ -15,7 +15,7 @@ const SignUp = (props) => {
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleNameChange = (e) => setName(e.target.value);
 
-  const { setUser, setIsLoading, setAuthToken } = AuthContext;
+  const { setUser, setIsLoading, setAuthToken } = useAuthContext();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -58,7 +58,7 @@ const SignUp = (props) => {
           name="password"
           placeholder="Password"
           required
-          minLength={5}
+          minLength={8}
           value={password}
           onChange={handlePasswordChange}
           pattern="(?=.*\d)(?=.*[a-zA-Z]).*"

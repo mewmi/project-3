@@ -11,7 +11,7 @@ const encodeJwt = require('../lib/encode-jwt');
 const saltRounds = 10;
 
 const validatePassword = (password) => {
-  return password && password.length > 5;
+  return password && password.length > 8;
 };
 
 router.post('/signup', (req, res, next) => {
@@ -69,13 +69,6 @@ router.get('/verify', routeGuard, (req, res, next) => {
   const user = { _id, email, name };
   const authToken = encodeJwt(user);
   res.json({ user, authToken });
-});
-
-router.get('/:id', routeGuard, (req, res, next) => {
-  const { id } = req.params;
-  User.findById(id)
-    .then((user) => res.json({ user }))
-    .catch((err) => next(err));
 });
 
 module.exports = router;
