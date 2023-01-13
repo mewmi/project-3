@@ -9,7 +9,7 @@ const SoundList = ({ sounds }) => {
           <div key={eachSound._id}>
             <Link to={`/sounds/${eachSound._id}`}>
               <h1>
-                {eachSound.title} ({eachSound.artist})
+                {eachSound.artist} ({eachSound.title})
               </h1>
             </Link>
           </div>

@@ -4,12 +4,12 @@ export const soundLoadSingle = (id) =>
   api.get(`/sounds/${id}`).then((response) => response.data);
 export const soundLoadAll = () =>
   api.get(`/sounds`).then((response) => response.data);
-export const songSingle = (id) =>
-  api.get(`/sounds/soundtracks/${id}`).then((response) => response.data);
-export const samplesLoadSingle = (id) =>
-  api.get(`/sounds/samples/${id}`).then((response) => response.data);
-export const podcastsLoadSingle = (id) =>
-  api.get(`/sounds/podcasts/${id}`).then((response) => response.data);
+export const songLoadALL = (id) =>
+  api.get(`/sounds/soundtracks`).then((response) => response.data);
+export const samplesLoadALL = (id) =>
+  api.get(`/sounds/samples`).then((response) => response.data);
+export const podcastsLoadALL = (id) =>
+  api.get(`/sounds/podcasts`).then((response) => response.data);
 export const soundAdd = (sound) =>
   api.post(`/sounds`, sound).then((response) => response.data);
 export const soundUpdate = (id, sound) =>
