@@ -10,8 +10,12 @@ import ProfilePage from "./pages/ProfilePage";
 import AllSoundPage from "./pages/AllSoundPage";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
+import ErrorPage from "./pages/ErrorPage";
+import { useAuthContext } from "./context/authentication";
 
 const App = () => {
+  const { user } = useAuthContext();
+
   return (
     <div>
       <NavBar />
@@ -31,9 +35,13 @@ const App = () => {
         {/*Profile page*/}
         <Route path="/profile" element={<ProfilePage />} />
         {/*Login page*/}
-        <Route path="/login" element={<LogIn />} />
+        <Route path="/login" element={(!user && <LogIn />) || <ErrorPage />} />
         {/*SignUp page*/}
-        <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/signup"
+          element={(!user && <SignUp />) || <ErrorPage />}
+        />
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </div>
   );
