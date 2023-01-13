@@ -27,7 +27,7 @@ const SignUp = (props) => {
           setUser(user);
           setIsLoading(false);
           setAuthToken(authToken);
-          navigate("/");
+          navigate("/"); // navigate to profile page?
         })
         .catch((error) => {
           console.log(error);
@@ -61,7 +61,7 @@ const SignUp = (props) => {
           minLength={5}
           value={password}
           onChange={handlePasswordChange}
-          pattern="(?=.*\d)(?=.*[a-zA-Z]).*"
+          /* pattern="(?=.*\d)(?=.*[a-zA-Z]).*" */
         />
 
         <label htmlFor="name">Name</label>

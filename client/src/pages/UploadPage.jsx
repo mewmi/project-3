@@ -1,4 +1,4 @@
-/* import React, { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { soundAdd } from "../services/sounds";
 import UploadForm from "../components/UploadForm";
@@ -34,7 +34,7 @@ const UploadPage = () => {
   );
 };
 
-export default UploadPage; */
+export default UploadPage;
 
 /* import React, { useState } from "react";
 /* import Head from "next/head"; */

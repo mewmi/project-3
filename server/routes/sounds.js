@@ -8,6 +8,8 @@ const SpotifyWebApi = require('spotify-web-api-node');
 
 const router = new express.Router();
 
+// SPOTIFY implementing try
+
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET

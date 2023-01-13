@@ -23,7 +23,7 @@ const LogIn = (props) => {
         setUser(user);
         setIsLoading(false);
         setAuthToken(authToken);
-        navigate("/");
+        navigate("/"); // also navigate to profile?
       })
       .catch((error) => {
         console.log(error);
