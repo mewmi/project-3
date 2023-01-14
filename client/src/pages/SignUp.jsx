@@ -39,7 +39,7 @@ const SignUp = (props) => {
 
   return (
     <div>
-      <form onSubmit={handleFormSubmit} className="flex flex-col m-8">
+      <form onSubmit={handleFormSubmit}>
         <label htmlFor="email">Email</label>
         <input
           id="email"
@@ -76,11 +76,11 @@ const SignUp = (props) => {
         />
 
         {errorMessage && (
-          <div className="bg-rose-200 border border-rose-600 p-4 mt-4 rounded-md">
-            <span className="text-rose-700">{errorMessage}</span>
+          <div>
+            <span>{errorMessage}</span>
           </div>
         )}
-        <button className="btn-primary">Sign Up</button>
+        <button>Sign Up</button>
       </form>
     </div>
   );
