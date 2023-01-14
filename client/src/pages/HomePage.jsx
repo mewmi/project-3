@@ -23,7 +23,7 @@ const HomePage = () => {
         sounds, which will echo in your ear for a while.{" "}
       </p>
 
-      <p>Register to use all features of EchoSound</p>
+      <p>Signup to use all features of EchoSound</p>
     </div>
   );
 };

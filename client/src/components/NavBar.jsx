@@ -9,6 +9,9 @@ const NavBar = () => {
           <Link to="/">Back to Homepage</Link>
         </li>
         <li>
+          <Link to="/profile">Back to ProfilePage</Link>
+        </li>
+        <li>
           <Link to="/sounds">All Sounds</Link>
         </li>
         <li>
